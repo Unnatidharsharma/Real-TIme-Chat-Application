@@ -1,76 +1,96 @@
-# 💬 Real-Time Chat Application – Spring Boot + Angular
+# Chat Application
 
-A full-stack **Real-Time Chat Application** powered by **Spring Boot (backend)** and **Angular (frontend)**. Utilizes **WebSocket (STOMP over SockJS)** for low-latency, bi-directional messaging, enabling seamless communication between users in real time.
+Welcome to my Chat Application! This project is a full-fledged realtime messaging application with a user interface 
+inspired by WhatsApp. It enables users to exchange messages individually or within groups.
 
----
+![image Screenshot](./images/homepage.png)
 
-## 🚀 Key Features
+## Features
 
-- 🔄 Real-time chat using WebSocket + STOMP
-- 👥 Multi-user support with JOIN/LEAVE events
-- 🕒 Timestamps and message types (CHAT, JOIN, LEAVE)
-- 🔁 Typing indicator and connection status
-- 📶 Auto reconnect on connection drop
-- 📦 REST API support (user registration/login optional)
-- 🌐 Clean UI using Angular + RxJS + Bootstrap/Tailwind (optional)
-- 🧪 Fully testable with tools like WebSocket King or Postman WebSocket
+- **Realtime Messaging:** Experience seamless, real-time messaging with instant message delivery.
+- **Individual Messaging:** Send private messages to other users.
+- **Group Messaging:** Create and edit groups to communicate with more than one user.
+- **Login And Signup:** Securely access the application with a login and signup system.
 
----
+## Technologies
 
-## ⚙️ Tech Stack
+- **Frontend:** Typescript with React
+- **Backend:** Java with Spring Boot, Spring Security, Spring Websocket and Spring Data JPA
+- **Database:** PostgreSQL
+- **Authentication:** JSON Web Token (JWT)
+- **State Management:** Redux, Thunk
+- **Component Library:** Material UI
 
-| Layer         | Technology                        |
-|---------------|------------------------------------|
-| Frontend      | Angular 15+                        |
-| Real-time     | WebSocket (STOMP + SockJS)         |
-| Backend       | Spring Boot, Spring WebSocket      |
-| Build Tools   | Maven, Angular CLI                 |
-| Communication | STOMP protocol over SockJS         |
-| Message Format| JSON                               |
+## Getting Started
 
----
+### Prerequisites
 
-## 📐 Architecture
+Ensure you have **npm** and **mvn** installed on your machine.
 
-### 🔧 Backend (Spring Boot)
-- **`WebSocketConfig.java`** – WebSocket/STOMP endpoint config
-- **`ChatController.java`** – Handle message mapping
-- **`Message.java`** – Chat message model (POJO)
-- **`User.java`** – Connected user metadata
-- **`ChatService.java`** – Message processing logic (optional)
+### Installation
 
-### 🎨 Frontend (Angular)
-- **Components**:
-  - `ChatComponent` – Message input/output
-  - `UserComponent` – Online users
-- **Services**:
-  - `WebSocketService` – Handles connection and message flow
-- **Routing & UI**:
-  - Clean UI with Bootstrap/Tailwind or Angular Material
+1. **Clone the repository:**  
+    ```bash  
+    git clone https://github.com/nicolasjusten95/chat-app.git
+    ```
+   
+2. **Navigate to the Frontend and install the required dependencies:**  
+    ```bash
+    cd frontend
+    npm install
+    ```
+   
+3. **Navigate to the Backend and install the required dependencies:**  
+    ```bash
+    cd backend
+    mvn clean install
+    ```
+   
+4. **Configure Environment Variables:**  
+   Configure the Spring Boot application.properties for database and other configurations.
 
----
+5. **Run the Application:**
+    - Start the frontend:
+      ```bash
+      npm start
+      ```
+    - Start the backend:
+      ```bash
+      mvn spring-boot:run
+      ```
+6. **Access the Application:**
+   - Open your browser and visit [http://localhost:3000](http://localhost:3000) to use the Realtime Chat Application.
+   - You can log in with a sample user to access the app with predefined data:
+     - email: luke.skywalker@test.com
+     - password: luke
+   - Or you can create your own Accounts and start chatting!
 
-## 🧾 Message Format
+## Images
 
-```json
-{
-  "sender": "Alice",
-  "content": "Hello world!",
-  "timestamp": "2025-07-02T12:45:00Z",
-  "type": "CHAT" // or JOIN, LEAVE
-}
+View your chats with other users:
+![image Screenshot](./images/homepage.png)
 
+Send messages to other users:
+![image Screenshot](./images/send_messages.png)
 
+Log into your account:
+![image Screenshot](./images/signin.png)
 
----
+Create a new account:
+![image Screenshot](./images/signup.png)
 
-### ✅ Next Steps:
-- Replace placeholder links with your GitHub and LinkedIn
-- Add screenshots or short demo video for UI impact
-- Upload both `backend/` and `frontend/` folders to GitHub in a monorepo
+Start a new chat:
+![image Screenshot](./images/start_new_group_chat.png)
 
-Would you like:
-- Full `WebSocketConfig`, `ChatController`, and Angular `WebSocketService` code?
-- Angular `chat.component.ts` and basic UI template?
+Edit your chats:
+![image Screenshot](./images/edit_group_chat.png)
 
-Let me know and I’ll provide a complete working version.
+## Contribution Guidelines
+
+I welcome contributions! If you have ideas for improvements or new features, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Thank you for using and contributing to the Realtime Chat Application!
